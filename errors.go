@@ -179,6 +179,10 @@ const (
 	// already exists.
 	AlreadyExists ErrorCode = "already_exists"
 
+	// TooManyRequests means too many requests have been sent in a given amount of
+	// time (for rate limiting)
+	TooManyRequests ErrorCode = "too_many_requests"
+
 	// PermissionDenied indicates the caller does not have permission to execute
 	// the specified operation. It must not be used if the caller cannot be
 	// identified (Unauthenticated).
@@ -259,6 +263,8 @@ func ServerHTTPStatusFromErrorCode(code ErrorCode) int {
 		return 404 // Not Found
 	case AlreadyExists:
 		return 409 // Conflict
+	case TooManyRequests:
+		return 429 // Too Many Requests
 	case PermissionDenied:
 		return 403 // Forbidden
 	case Unauthenticated:

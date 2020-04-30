@@ -208,6 +208,7 @@ corresponding HTTP Status Code for the response.
 | not_found           | 404 | Some requested entity was not found.
 | bad_route           | 404 | The requested URL path wasn't routable to a Twirp service and method. This is returned by generated server code and should not be returned by application code (use "not_found" or "unimplemented" instead).
 | already_exists      | 409 | An attempt to create an entity failed because one already exists.
+| too_many_requests   | 429 | Too many requests have been sent in a given amount of time (rate limiting)
 | permission_denied   | 403 | The caller does not have permission to execute the specified operation. It must not be used if the caller cannot be identified (use "unauthenticated" instead).
 | unauthenticated     | 401 | The request does not have valid authentication credentials for the operation.
 | resource_exhausted  | 403 | Some resource has been exhausted, perhaps a per-user quota, or perhaps the entire file system is out of space.

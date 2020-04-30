@@ -50,6 +50,7 @@ Each error code is defined by a constant in the `twirp` package:
 | NotFound           | not_found           | 404 Not Found
 | BadRoute           | bad_route           | 404 Not Found
 | AlreadyExists      | already_exists      | 409 Conflict
+| TooManyRequests    | too_many_requests   | 429 TooManyRequests
 | PermissionDenied   | permission_denied   | 403 Forbidden
 | Unauthenticated    | unauthenticated     | 401 Unauthorized
 | ResourceExhausted  | resource_exhausted  | 403 Forbidden
